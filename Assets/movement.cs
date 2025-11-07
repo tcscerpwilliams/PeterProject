@@ -5,6 +5,10 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     public Rigidbody body;
+    public float speed;
+    public float jumpforce;
+   
+       
     // Start is called before the first frame update
     void Start()
     {
@@ -35,14 +39,15 @@ public class movement : MonoBehaviour
 
 
         var direction = new Vector3(x, 0, z);
-       
 
-        transform.position += direction*Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        transform.position += direction * Time.deltaTime * speed;
+
+        if (Input.GetKeyDown(KeyCode.Space) &&body.linearVelocity.y==0)
         {
-            body.AddForce(Vector3.up * 200);
+            body.AddForce(Vector3.up * jumpforce);
         }
+
 
     }
 }
