@@ -47,7 +47,18 @@ public class movement : MonoBehaviour
         {
             body.AddForce(Vector3.up * jumpforce);
         }
+        
 
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        var p=collision.gameObject.GetComponent<MOVINGPLATFORM>();
+        if (p != null)
+        {
+            
+        }
+        transform.parent = collision.transform;
     }
 }

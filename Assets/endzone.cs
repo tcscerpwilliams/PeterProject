@@ -18,7 +18,7 @@ public class endzone : MonoBehaviour
     // end is restarting the game i think
     public void End()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(1);
 
     }
 
